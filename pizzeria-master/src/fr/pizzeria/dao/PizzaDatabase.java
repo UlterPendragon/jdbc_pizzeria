@@ -39,9 +39,9 @@ public class PizzaDatabase implements IPizzaDao {
 			e.printStackTrace();
 		}
 		
-		this.url = prop.getProperty("db.url");
-		this.username = prop.getProperty("db.username");
-		this.password = prop.getProperty("db.password");
+		this.url = prop.getProperty("jdbc:mysql://localhost:3306/pizzeria");
+		this.username = prop.getProperty("root");
+		this.password = prop.getProperty("");
 	}
 	
 	@Override
