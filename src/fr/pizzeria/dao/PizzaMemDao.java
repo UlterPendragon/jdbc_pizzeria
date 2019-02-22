@@ -9,7 +9,7 @@ import fr.pizzeria.model.Pizza;
 public class PizzaMemDao implements IPizzaDao {
 
 	private List<Pizza> pizzas = new ArrayList<>();
-	
+
 	public PizzaMemDao(){
 		pizzas.add(new Pizza("PEP", "Pépéroni", 12.50));
 		pizzas.add(new Pizza("MAR", "Margherita", 14.00));
@@ -58,15 +58,26 @@ public class PizzaMemDao implements IPizzaDao {
 
 	@Override
 	public Pizza findPizzaByCode(String codePizza) {
-		// TODO Auto-generated method stub
-		return null;
+		Pizza pizzaFound = null;
+
+		for(Pizza pizza: pizzas){            
+			if(pizza.getCode().equals(codePizza)){
+				pizzaFound = pizza;
+			}
+		}
+		return pizzaFound;
 	}
 
 	@Override
 	public boolean pizzaExists(String codePizza) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
 
+
+		boolean pizzaExists = false;
+		for(Pizza pizza : pizzas){
+			if(pizza.getCode().equals(codePizza)){
+				pizzaExists = true;
+			}
+		}    
+		return pizzaExists;
+	}
 }

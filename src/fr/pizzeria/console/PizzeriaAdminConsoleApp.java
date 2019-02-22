@@ -8,17 +8,17 @@ import fr.pizzeria.services.MenuService;
 import fr.pizzeria.services.MenuServiceFactory;
 
 public class PizzeriaAdminConsoleApp {
-	
+
 	public static void main(String[] args) {
-		
-		
+
+
 		/* Initialisation du TDB de pizzas */
 		IPizzaDao dao = new PizzaMemDao();
-		
+
 		/* Initialisation du scanner */
 		Scanner scanner = new Scanner(System.in);
 		int choix = 0;
-		
+
 		/* Structure de répétition de la boucle principale */
 		do {
 			println("***** Pizzeria Administration *****");
@@ -28,20 +28,20 @@ public class PizzeriaAdminConsoleApp {
 			println("4. Supprimer une pizza ");
 			println("5. Initialiser la base de donnée à partir du tableau pizza");
 			println("99. Sortir ");
-	
+
 			System.out.print("Veuillez choisir une option:");
 			choix = scanner.nextInt();
-			
+
 			MenuService service = MenuServiceFactory.getInstance(choix);
 			service.executeUC(scanner, dao);
-			
+
 		} while(choix!=99);
-		
+
 		scanner.close();
-		
+
 	}
-	
-	
+
+
 
 	private static void println(String msg){
 		System.out.println(msg);
