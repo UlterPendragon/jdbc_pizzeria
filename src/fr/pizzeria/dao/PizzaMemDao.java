@@ -42,7 +42,6 @@ public class PizzaMemDao implements IPizzaDao {
 				return;
 			}
 		}
-
 	}
 
 	@Override
@@ -63,15 +62,13 @@ public class PizzaMemDao implements IPizzaDao {
 		for(Pizza pizza: pizzas){            
 			if(pizza.getCode().equals(codePizza)){
 				pizzaFound = pizza;
-			}
+			} 			
 		}
 		return pizzaFound;
 	}
 
 	@Override
 	public boolean pizzaExists(String codePizza) {
-
-
 		boolean pizzaExists = false;
 		for(Pizza pizza : pizzas){
 			if(pizza.getCode().equals(codePizza)){
